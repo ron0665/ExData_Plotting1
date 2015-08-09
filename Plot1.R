@@ -11,8 +11,8 @@ datetime <- paste(as.Date(data$Date), data$Time)
 data$Datetime <- as.POSIXct(datetime)
 
 ## Plot 1
-hist(data$Global_active_power, main="Global Active Power", 
-     xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
+with(data, hist(Global_active_power, main="Global Active Power", 
+    xlab="Global Active Power (kilowatts)",col="Red"))
 
 ## Saving to file
 dev.copy(png, file="plot1.png", height=480, width=480)
